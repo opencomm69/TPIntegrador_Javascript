@@ -1,0 +1,229 @@
+<!DOCTYPE html >
+<html lang="es">
+<head>
+
+<!-- Especifica la codificación de caracteres -->
+
+    <meta charset="UTF-8">
+
+<!-- Mobile Specific Meta ================================================== -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Integrador_JavaScript</title>
+
+<!-- bootstrap.min css -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="css/main.css">
+
+    <script>
+        function obtenerdatos() { 
+            
+            let nombre = document.getElementById("nombre").value;
+            let apellido = document.getElementById("apellido").value;
+            let correo = document.getElementById("correo").value;
+            let cantidad = document.getElementById("cantidad").value;
+            let categoria = document.getElementById("inputGroupSelectCategoria").value;
+            // let total = document.getElementById("total").value;
+       
+            alert("NOMBRE y APELLIDO: "+nombre+" "+apellido+", CORREO: "+correo+", CANTIDAD: "+cantidad+", CATEGORÍA: "+categoria+", IMPORTE A PAGAR: "+ "");
+
+            selectElement = document.querySelector('#inputGroupSelectCategoria');
+            output = selectElement.value;
+            document.querySelector('.output').textContent = output;
+            
+            // if (Number(cantidad)) {
+            //     let categoria = document.querySelector("inputGroupSelectCategoria");
+            //     let total;
+
+            //     switch (categoria) {
+            //         case "Estudiante": {
+            //             total = 200 * cantidad * 0.2;
+            //         break;
+            //     }
+            //         case "Trainee": {
+            //             total = 200 * cantidad * 0.5;
+            //         break;
+            //     }
+            //     case "Junior": {
+            //         totalPayment = 200 * cantidad * 0.85;
+            //         break;
+            //     }
+            // }
+            // alert("total");
+        }
+  
+    </script>
+</head>
+
+<body id="body">
+
+<!-- Fixed Navigation  ==================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="#body">
+            <p><b>Conf Bs. As.</b></p>
+        </a>
+        <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-end" id="navbarSupportedContent"> 
+            <ul class="navbar-nav  mb-3 mb-lg-3 my3 px-2">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">La conferencia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#oradores">Los oradores</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">El lugar y la fecha</a></li>
+                <li class="nav-item"><a class="nav-link" href="#form">Conviértete en orador</a></li>
+                <li class="nav-item"><a class="nav-link text-end" href="#">Compra tickets</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- </The end section> -->
+
+<!--Card -->
+
+<div class="container w-50">
+    <div class="row mt-5 pt-xl-5">
+        <div class="col-4">
+            <div class="card border-primary text-center">
+                <div class="card-body">
+                    <h4><b>Estudiante</b></h4>
+                    <p class="card-text">Tiene un descuento</p>
+                    <p class="card-text fw-bold">80%</p>
+                    <p class="card-text .fs-6">* presentar documentación</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-4">
+            <div class="card card border-primary text-center">
+                <div class="card-body">
+                    <h4><b>Trainee</b></h4> 
+                    <p class="card-text">Tiene un descuento</p>
+                    <p class="card-text fw-bold">50%</p>
+                    <p class="card-text">* presentar documentación</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card card border-warning text-center">
+                <div class="card-body">
+                    <h4><b>Junior</b></h4>
+                    <p class="card-text">Tiene un descuento</p>
+                    <p class="card-text fw-bold">15%</p>
+                    <p class="card-text">* presentar documentación</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </The end section> -->
+
+<!-- Formulario -->
+
+<section class="form" id="form">
+    <div class="container">
+        <div class="row">
+            <h6 class="text-center pb-1 pt-1">VENTA</h6>
+            <h2 class="text-center">VALOR DEL TICKET $200</h2>
+        </div>
+    </div>
+
+
+    <form name="form" id="forms">
+        <div class="container-fluid text-center w-50">
+            <div class="row">
+                <div class="col">
+                  <input type="text" id="nombre" class="form-control" placeholder="Nombre" aria-label="First name" required>
+                </div>
+                <div class="col">
+                  <input type="text" id="apellido" class="form-control" placeholder="Apellido" aria-label="Last name" required>
+                </div>
+                <div class="container-fluid pt-3">
+                    <div class="row">
+                        <div class="col">
+                            <input type="correo" id="correo" class="form-control" placeholder="Correo" aria-label="e-mail" required>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-fluid w-50 pt-2">
+            <div class="row">
+                <div class="col">
+                    <label for="Cantidad pt-5">Cantidad</label>
+                    <input type="text" class="form-control" id="cantidad" placeholder="Cantidad" aria-label="Cantidad" required>
+                </div>
+                <div class="col">
+                    <label for="Categoria pt-5">Categoría</label>
+                        <div class="input-categoria">
+                            <select class="form-select" id="inputGroupSelectCategoria" aria-label="Example select with button addon">
+                                <option selected>Estudiante</option>
+                                <option value="Estudiante">Estudiante</option>
+                                <option value="Trainee">Trainee</option>
+                                <option value="Junior">Junior</option>
+                            </select>
+                        </div>
+                        
+            </div> 
+            <div class="container-fluid  pt-5">
+                <div class="row">
+                    <div class="col">
+                        
+                        <p type="text" class="p-2 bg-info" id= "total">Total a pagar: $ </p>  
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid text-center pt-4">
+                <div class="row">
+                    <div class="col">
+                        <button type="reset" class="btn btn-outline-light bg-success w-100" value=Borrar>Borrar</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="resumen" onclick="obtenerdatos()" class="btn btn-outline-light bg-success w-100">Resumen</button>
+                           
+                    </div>
+                </div>
+            </div>
+        </div>           
+    </form>
+    
+</section>
+
+
+<!-- Fooder -->
+
+<div class="container-fluid pt-2">
+        <footer class="py-3 my-2">
+            <ul class="nav justify-content-center pb-3 mb-3 bg-primary fs-5">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Preguntas 
+                    frecuentes</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contáctanos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Conferencias</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Términos y condiciones</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacidad</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Estudiantes</a></li>
+            </ul>
+        </footer>
+    </div>
+
+<!-- 
+		Essential Scripts
+		=====================================-->
+		<!-- Bootstrap 3.1 -->
+		<script src="js/bootstrap.min.js"></script>
+        <script src="./script.js"></script>
+</body>
+</html>
+
